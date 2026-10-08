@@ -1,13 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The professional portfolio of Econgu Emmanuel, a Biomedical and Mechatronics Engineering student at Kyambogo University in Uganda.">
-  <meta name="author" content="Econgu Emmanuel">
-  <meta name="theme-color" content="#10233f">
-  <title>Econgu Emmanuel | Biomedical & Mechatronics Engineering</title>
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The professional portfolio of Econgu Emmanuel, a Biomedical and Mechatronics Engineering student at Kyambogo University in Uganda.">
+<meta name="author" content="Econgu Emmanuel">
+<meta name="theme-color" content="#10233f">
+<title>Econgu Emmanuel | Biomedical & Mechatronics Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{
+  --navy:#10233f; --navy-deep:#0a1829; --mint:#46d9bd; --mint-ink:#0b3d34;
+  --bg:#f3f6fa; --surface:#ffffff; --ink:#0f1b2d; --muted:#5a6a80; --line:#dbe3ee;
+  --wa:#25d366;
+  --display:"Bricolage Grotesque","Segoe UI",Helvetica,Arial,sans-serif;
+  --body:"Figtree","Segoe UI",Helvetica,Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0c1626;--surface:#13233b;--ink:#eaf0f8;--muted:#9fb0c6;--line:#243756;}
+}
+:root[data-theme="dark"]{--bg:#0c1626;--surface:#13233b;--ink:#eaf0f8;--muted:#9fb0c6;--line:#243756;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px;border-radius:6px}
+.container{width:min(1140px,100% - 2.5rem);margin-inline:auto}
+
+/* Header */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(10,24,41,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.5rem;text-decoration:none;color:#fff;letter-spacing:-.03em}
+.brand span{color:var(--mint)}
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{color:#c9d6e8;text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links .nav-cta{background:var(--mint);color:var(--mint-ink);padding:.55rem 1.1rem;border-radius:999px;font-weight:600}
+.nav-links .nav-cta:hover{color:var(--mint-ink);background:#6ee7d0}
+.menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:1.3rem;width:44px;height:44px;border-radius:10px;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--navy-deep);color:#fff;padding:calc(68px + env(safe-area-inset-top,0px) + 4.5rem) 0 0}
+.hero-glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none}
+.glow-one{width:460px;height:460px;background:#1f5fae;top:-120px;right:-80px}
+.glow-two{width:380px;height:380px;background:#0f8f7a;bottom:-140px;left:-120px;opacity:.35}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center;padding-bottom:4.5rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:600;color:var(--mint);margin-bottom:1.25rem}
+.status-dot{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(70,217,189,.2)}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.9rem);font-weight:800}
+.hero h1 span{color:var(--mint)}
+.hero-text{max-width:56ch;margin-top:1.5rem;color:#b9c8dc;font-size:1.15rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.button{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:1rem;border:1.5px solid transparent;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.button:hover{transform:translateY(-2px)}
+.button-primary{background:var(--mint);color:var(--mint-ink)}
+.button-primary:hover{background:#6ee7d0}
+.button-quiet{border-color:rgba(255,255,255,.3);color:#fff}
+.button-quiet:hover{border-color:#fff}
+.hero-note{display:flex;align-items:center;gap:.9rem;margin-top:2.25rem;color:#8ea2bd;font-size:.95rem}
+.note-line{width:44px;height:2px;background:var(--mint);flex:none}
+
+.hero-card-wrap{position:relative;display:grid;place-items:center;min-height:420px}
+.orbit{position:absolute;border:1px solid rgba(255,255,255,.14);border-radius:50%}
+.orbit-a{width:400px;height:400px}
+.orbit-b{width:300px;height:300px;border-style:dashed}
+.profile-card{position:relative;width:min(300px,100%);aspect-ratio:3/4;border-radius:28px;padding:1.4rem;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(155deg,#1b3a66 0%,#10233f 55%,#0d3a3b 100%);border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.card-top{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;letter-spacing:.1em;color:#9fb4d0}
+.card-mark{background:var(--mint);color:var(--mint-ink);font-weight:800;font-family:var(--display);padding:.3rem .6rem;border-radius:8px;letter-spacing:0}
+.monogram{font-family:var(--display);font-weight:800;font-size:5.5rem;text-align:center;letter-spacing:-.05em;line-height:1}
+.monogram span{color:var(--mint)}
+.card-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem}
+.card-name{font-family:var(--display);font-weight:700;font-size:1.2rem}
+.card-role{color:#9fb4d0;font-size:.82rem;margin-top:.15rem}
+.card-arrow{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:none}
+.floating-chip{position:absolute;display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:.55rem .9rem;border-radius:999px;font-size:.85rem;font-weight:500}
+.chip-icon{width:22px;height:22px;border-radius:50%;background:var(--mint);color:var(--mint-ink);display:grid;place-items:center;font-weight:700;font-size:.8rem}
+.chip-one{top:12%;left:-2%}
+.chip-two{bottom:14%;right:-2%}
+.hero-footer{position:relative;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.4rem 0;border-top:1px solid rgba(255,255,255,.1);font-size:.78rem;letter-spacing:.08em;color:#7f93ae}
+
+/* Sections */
+.section{padding:6rem 0}
+.section-eyebrow{color:var(--mint-ink);background:rgba(70,217,189,.28);padding:.3rem .75rem;border-radius:999px;font-size:.82rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .section-eyebrow{color:var(--mint)}}
+:root[data-theme="dark"] .section-eyebrow{color:var(--mint)}
+.section h2{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:800}
+.muted-heading{color:var(--muted)}
+.two-column{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+.lead{font-size:1.3rem;font-weight:500;line-height:1.5;margin-bottom:1.25rem}
+.about-copy p:not(.lead){color:var(--muted);max-width:62ch}
+.fact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.25rem}
+.fact-row div{border-top:2px solid var(--mint);padding-top:.8rem}
+.fact-row strong{display:block;font-family:var(--display);font-size:1.4rem}
+.fact-row span{color:var(--muted);font-size:.92rem}
+
+.focus-section{background:var(--surface);border-block:1px solid var(--line)}
+.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.section-intro{max-width:44ch;color:var(--muted)}
+.focus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.focus-card{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:.75rem;transition:border-color .2s,transform .2s}
+.focus-card:hover{border-color:var(--mint);transform:translateY(-4px)}
+.focus-card .number{position:absolute;top:1.3rem;right:1.4rem;font-family:var(--display);font-weight:700;color:var(--muted);font-size:.9rem}
+.focus-icon{width:48px;height:48px;border-radius:14px;background:var(--navy);color:var(--mint);display:grid;place-items:center;font-size:1.3rem;margin-bottom:.4rem}
+.focus-card h3{font-size:1.25rem}
+.focus-card p{color:var(--muted);font-size:.97rem;flex:1}
+.card-link{display:inline-flex;gap:.4rem;font-weight:600;font-size:.92rem}
+
+.project-list{display:flex;flex-direction:column}
+.project-item{display:grid;grid-template-columns:70px 1fr auto;gap:1.5rem;align-items:start;padding:2rem 0;border-top:1px solid var(--line)}
+.project-item:last-child{border-bottom:1px solid var(--line)}
+.project-index{font-family:var(--display);font-weight:800;font-size:1.8rem;color:var(--mint)}
+.project-type{font-size:.78rem;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem}
+.project-content h3{font-size:1.6rem;margin-bottom:.6rem}
+.project-content p:not(.project-type){color:var(--muted);max-width:62ch}
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.tag-row span{border:1px solid var(--line);background:var(--surface);padding:.25rem .8rem;border-radius:999px;font-size:.85rem}
+.project-status{font-size:.85rem;font-weight:600;background:var(--navy);color:#fff;padding:.4rem .9rem;border-radius:999px;white-space:nowrap}
+.small-note{margin-top:1.75rem;font-size:.9rem;color:var(--muted)}
+
+.skills-section{background:var(--navy);color:#fff}
+.skills-section .section-eyebrow{background:rgba(70,217,189,.16);color:var(--mint)}
+.skills-section .muted-heading{color:#8ea6c6}
+.skills-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+.skills-intro{margin-top:1.25rem;color:#a9bcd6;max-width:44ch}
+.skill-groups{display:flex;flex-direction:column;gap:1rem}
+.skill-group{display:flex;gap:1.25rem;padding:1.5rem;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(255,255,255,.04)}
+.skill-symbol{font-family:var(--display);font-weight:800;color:var(--mint);font-size:1.2rem}
+.skill-group h3{font-size:1.2rem;margin-bottom:.35rem}
+.skill-group p{color:#a9bcd6;font-size:.97rem}
+
+/* Contact */
+.contact-section{background:var(--navy-deep);color:#fff;padding:6.5rem 0;text-align:center;position:relative;overflow:hidden}
+.contact-section::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:#0f8f7a;filter:blur(120px);opacity:.25;top:-200px;left:50%;transform:translateX(-50%)}
+.contact-inner{position:relative}
+.contact-section h2{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800}
+.contact-text{max-width:56ch;margin:1.5rem auto 0;color:#b9c8dc}
+.contact-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem;margin-top:2.25rem}
+.button-light{background:#fff;color:var(--navy)}
+.button-light:hover{background:#e6eef9}
+.button-whatsapp{background:var(--wa);color:#06361a}
+.button-whatsapp:hover{background:#4fe08a}
+.button-outline-light{border-color:rgba(255,255,255,.4);color:#fff}
+.button-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.button svg{width:20px;height:20px;flex:none}
+.contact-details{margin-top:2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 2rem;color:#9fb4d0;font-size:.97rem}
+.contact-details a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
+.contact-details a:hover{color:#fff;border-color:#fff}
+
+.site-footer{background:#07111f;color:#8ea2bd;padding:1.75rem 0 calc(1.75rem + env(safe-area-inset-bottom,0px));font-size:.92rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-brand{font-size:1.2rem}
+.back-top{text-decoration:none}
+.back-top:hover{color:#fff}
+
+/* Floating WhatsApp */
+.wa-float{position:fixed;right:1.1rem;bottom:calc(1.1rem + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 28px rgba(0,0,0,.35);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+/* Entrance: one orchestrated hero reveal */
+@media (prefers-reduced-motion:no-preference){
+  .hero-copy>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero-copy>*:nth-child(2){animation-delay:.08s}.hero-copy>*:nth-child(3){animation-delay:.16s}
+  .hero-copy>*:nth-child(4){animation-delay:.24s}.hero-copy>*:nth-child(5){animation-delay:.32s}
+  .profile-card{animation:float 7s ease-in-out infinite}
+}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Responsive */
+@media (max-width:980px){
+  .focus-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid,.two-column,.skills-layout{grid-template-columns:1fr;gap:2.5rem}
+  .hero-card-wrap{min-height:380px}
+  .project-item{grid-template-columns:50px 1fr}
+  .project-status{grid-column:2;justify-self:start}
+}
+@media (max-width:760px){
+  .menu-toggle{display:block}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--navy-deep);padding:.75rem 1.25rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.1);display:none}
+  .nav-links.is-open{display:flex}
+  .nav-links a{padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-links .nav-cta{text-align:center;margin-top:.75rem;border-bottom:0}
+  .section{padding:4.25rem 0}
+  .focus-grid{grid-template-columns:1fr}
+  .fact-row{grid-template-columns:1fr}
+  .orbit-a{width:320px;height:320px}.orbit-b{width:240px;height:240px}
+  .chip-one{left:0}.chip-two{right:0}
+  .hero-footer{font-size:.7rem}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
 </head>
 <body>
   <header class="site-header">
@@ -29,7 +220,7 @@
       <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> Biomedical & Mechatronics Engineering</p>
+          <p class="eyebrow"><span class="status-dot"></span> Biomedical &amp; Mechatronics Engineering</p>
           <h1>Engineering ideas into <span>meaningful impact.</span></h1>
           <p class="hero-text">I'm Econgu Emmanuel, an engineering student at Kyambogo University, Uganda, interested in practical technologies that improve healthcare, equipment reliability, and access to essential services.</p>
           <div class="hero-actions">
@@ -58,7 +249,7 @@
     <section class="section about-section" id="about">
       <div class="container two-column">
         <div>
-          <p class="eyebrow section-eyebrow">01 / ABOUT ME</p>
+          <p class="eyebrow section-eyebrow">01 / About me</p>
           <h2>Technical thinking.<br><span class="muted-heading">Purposeful outcomes.</span></h2>
         </div>
         <div class="about-copy">
@@ -72,13 +263,13 @@
     <section class="section focus-section" id="focus">
       <div class="container">
         <div class="section-heading">
-          <div><p class="eyebrow section-eyebrow">02 / WHAT I'M INTERESTED IN</p><h2>Where I focus my curiosity.</h2></div>
+          <div><p class="eyebrow section-eyebrow">02 / What I'm interested in</p><h2>Where I focus my curiosity.</h2></div>
           <p class="section-intro">Exploring engineering approaches with the potential to make healthcare systems more dependable and accessible.</p>
         </div>
         <div class="focus-grid">
           <article class="focus-card"><span class="number">01</span><div class="focus-icon">✳</div><h3>Biomedical Technology</h3><p>Medical equipment, clinical technology, device performance, and safer equipment use.</p><span class="card-link">Healthcare systems <span>↗</span></span></article>
-          <article class="focus-card"><span class="number">02</span><div class="focus-icon">⌁</div><h3>Maintenance & Reliability</h3><p>Preventive maintenance, troubleshooting, equipment monitoring, and dependable service workflows.</p><span class="card-link">Reliable equipment <span>↗</span></span></article>
-          <article class="focus-card"><span class="number">03</span><div class="focus-icon">⌘</div><h3>Mechatronics & Simulation</h3><p>Control systems, system modelling, simulation, and integrating mechanical and electronic ideas.</p><span class="card-link">Systems thinking <span>↗</span></span></article>
+          <article class="focus-card"><span class="number">02</span><div class="focus-icon">⌁</div><h3>Maintenance &amp; Reliability</h3><p>Preventive maintenance, troubleshooting, equipment monitoring, and dependable service workflows.</p><span class="card-link">Reliable equipment <span>↗</span></span></article>
+          <article class="focus-card"><span class="number">03</span><div class="focus-icon">⌘</div><h3>Mechatronics &amp; Simulation</h3><p>Control systems, system modelling, simulation, and integrating mechanical and electronic ideas.</p><span class="card-link">Systems thinking <span>↗</span></span></article>
           <article class="focus-card"><span class="number">04</span><div class="focus-icon">◎</div><h3>Rural Health Innovation</h3><p>Scalable and maintainable solutions designed with the realities of rural communities in mind.</p><span class="card-link">Local impact <span>↗</span></span></article>
         </div>
       </div>
@@ -87,21 +278,21 @@
     <section class="section projects-section" id="projects">
       <div class="container">
         <div class="section-heading">
-          <div><p class="eyebrow section-eyebrow">03 / SELECTED WORK</p><h2>Ideas in development.</h2></div>
+          <div><p class="eyebrow section-eyebrow">03 / Selected work</p><h2>Ideas in development.</h2></div>
           <p class="section-intro">A starting point for documenting coursework, prototypes, simulations, and professional experience as they develop.</p>
         </div>
         <div class="project-list">
           <article class="project-item"><div class="project-index">01</div><div class="project-content"><p class="project-type">CONCEPT / HEALTHCARE TECHNOLOGY</p><h3>Healthcare Equipment Monitoring</h3><p>Exploring ways to improve visibility into equipment condition and support timely maintenance in healthcare facilities.</p><div class="tag-row"><span>Monitoring</span><span>Reliability</span><span>Biomedical</span></div></div><div class="project-status">Concept exploration</div></article>
           <article class="project-item"><div class="project-index">02</div><div class="project-content"><p class="project-type">CONCEPT / RURAL HEALTH</p><h3>Essential Medical Service Access</h3><p>Investigating scalable engineering models that could help rural facilities access and manage essential healthcare technologies.</p><div class="tag-row"><span>Rural health</span><span>Systems design</span><span>Uganda</span></div></div><div class="project-status">Research interest</div></article>
-          <article class="project-item"><div class="project-index">03</div><div class="project-content"><p class="project-type">ACADEMIC / SIMULATION</p><h3>Engineering Modelling & Simulation</h3><p>Using structured models and simulation to understand system behaviour before committing to expensive physical prototypes.</p><div class="tag-row"><span>Simulation</span><span>Analysis</span><span>Design</span></div></div><div class="project-status">Learning in progress</div></article>
+          <article class="project-item"><div class="project-index">03</div><div class="project-content"><p class="project-type">ACADEMIC / SIMULATION</p><h3>Engineering Modelling &amp; Simulation</h3><p>Using structured models and simulation to understand system behaviour before committing to expensive physical prototypes.</p><div class="tag-row"><span>Simulation</span><span>Analysis</span><span>Design</span></div></div><div class="project-status">Learning in progress</div></article>
         </div>
-        <p class="small-note">These entries describe areas of interest and work in development, not claims of completed or validated projects. Replace them with verified project details as your portfolio grows.</p>
+        <p class="small-note">These entries describe areas of interest and work in development, not completed or validated projects.</p>
       </div>
     </section>
 
     <section class="section skills-section" id="skills">
       <div class="container skills-layout">
-        <div><p class="eyebrow section-eyebrow">04 / CAPABILITIES</p><h2>Building a practical<br><span class="muted-heading">engineering toolkit.</span></h2><p class="skills-intro">This section can be updated as you gain experience, complete projects, and verify specific technical competencies.</p></div>
+        <div><p class="eyebrow section-eyebrow">04 / Capabilities</p><h2>Building a practical<br><span class="muted-heading">engineering toolkit.</span></h2><p class="skills-intro">Foundations I'm developing through study and hands-on practice.</p></div>
         <div class="skill-groups">
           <div class="skill-group"><span class="skill-symbol">01</span><div><h3>Biomedical Engineering</h3><p>Medical equipment fundamentals · Maintenance concepts · Healthcare technology</p></div></div>
           <div class="skill-group"><span class="skill-symbol">02</span><div><h3>Mechatronics</h3><p>Engineering systems · Control concepts · Hardware and software integration</p></div></div>
@@ -112,15 +303,21 @@
 
     <section class="contact-section" id="contact">
       <div class="container contact-inner">
-        <p class="eyebrow">05 / CONTACT</p>
+        <p class="eyebrow">05 / Contact</p>
         <h2>Have a problem worth<br>solving together?</h2>
         <p class="contact-text">I'm open to meaningful conversations about engineering, healthcare technology, collaboration, and learning opportunities.</p>
         <div class="contact-actions">
-          <!-- Replace the placeholder email below with your real professional email address. -->
-          <a class="button button-light" <a class="button button-light" href="mailto:biomedeconguemmanuel@gmail.com">Email me <span>↗</span></a>>Email me <span>↗</span></a>
-          <a class="button button-outline-light" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Find me on LinkedIn <span>↗</span></a>
+          <a class="button button-whatsapp" href="https://wa.me/256763526250?text=Hello%20Emmanuel%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5C18.6 23.8 24 18.5 24 11.9c0-3.2-1.2-6.200-3.500-8.400zM12 21.800a9.900 9.900 0 0 1-5-1.400l-.4-.2-3.700 1 1-3.600-.2-.4a9.800 9.800 0 0 1-1.500-5.300C2.200 6.500 6.600 2.100 12 2.100c2.600 0 5.100 1 6.900 2.900a9.700 9.700 0 0 1 2.900 6.900c0 5.400-4.400 9.900-9.800 9.900zm5.400-7.400c-.3-.1-1.800-.9-2-1-.3-.1-.5-.1-.7.100-.2.300-.8 1-.9 1.200-.2.200-.3.200-.6.100-.3-.1-1.200-.4-2.300-1.400-.9-.8-1.400-1.700-1.600-2-.2-.3 0-.5.100-.6l.4-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-.9-2.100c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.1.200 2.100 3.200 5.100 4.500.7.300 1.300.5 1.700.6.700.2 1.400.2 1.900.1.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400-.1-.2-.3-.2-.6-.4z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a class="button button-light" href="mailto:biomedeconguemmanuel@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline-light" href="https://www.linkedin.com/search/results/people/?keywords=Emmanuel%20Econgu" target="_blank" rel="noopener noreferrer">Find me on LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
-        <p class="contact-reminder">Before publishing, replace the placeholder email and add your own professional profile links.</p>
+        <p class="contact-details">
+          <a href="tel:+256763526250">+256 763 526 250</a>
+          <a href="mailto:biomedeconguemmanuel@gmail.com">biomedeconguemmanuel@gmail.com</a>
+        </p>
       </div>
     </section>
   </main>
@@ -128,18 +325,25 @@
   <footer class="site-footer">
     <div class="container footer-inner"><a class="brand footer-brand" href="#home">EE<span>.</span></a><p>© <span id="year">2026</span> Econgu Emmanuel. Built with purpose.</p><a href="#home" class="back-top">Back to top ↑</a></div>
   </footer>
+
+  <a class="wa-float" href="https://wa.me/256763526250?text=Hello%20Emmanuel%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="Chat with Emmanuel on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5C18.6 23.8 24 18.5 24 11.9c0-3.2-1.2-6.200-3.500-8.400zM12 21.800a9.900 9.900 0 0 1-5-1.400l-.4-.2-3.700 1 1-3.600-.2-.4a9.800 9.800 0 0 1-1.500-5.300C2.200 6.500 6.600 2.100 12 2.100c2.600 0 5.100 1 6.900 2.900a9.700 9.700 0 0 1 2.900 6.900c0 5.400-4.400 9.900-9.800 9.900zm5.400-7.400c-.3-.1-1.800-.9-2-1-.3-.1-.5-.1-.7.100-.2.300-.8 1-.9 1.200-.2.200-.3.200-.6.100-.3-.1-1.200-.4-2.300-1.400-.9-.8-1.400-1.700-1.600-2-.2-.3 0-.5.100-.6l.4-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-.9-2.100c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.1.200 2.100 3.200 5.100 4.500.7.300 1.300.5 1.700.6.700.2 1.400.2 1.900.1.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400-.1-.2-.3-.2-.6-.4z"/></svg>
+  </a>
+
   <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const links = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
+    var toggle = document.querySelector('.menu-toggle');
+    var links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
       links.classList.toggle('is-open', !open);
     });
-    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      links.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
